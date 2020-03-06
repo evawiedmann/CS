@@ -1,6 +1,8 @@
 CS
 Start Google Docs Forms to model PDXWIT
 
+Spent time matching Epicodus styling
+
 
 # Create React Redux App Structure [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?hashtags=reactjs%20%23redux%20%23javascript&original_referer=https%3A%2F%2Fpublish.twitter.com%2F&ref_src=twsrc%5Etfw&text=Start%20your%20project%20fast%20with%20Create%20React%20Redux%20App%20Structure&tw_p=tweetbutton&url=https%3A%2F%2Fgithub.com%2Fshystruk%2Fcreate-react-redux-app-structure&via=shystrukk) #
 
