@@ -11,19 +11,30 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
-    };
+      mentorshipMasterList: []
+      };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.addMentee = this.addMentee.bind(this);
+    this.submitMentee = this.submitMentee.bind(this);
+    this.addMentor = this.addMentor.bind(this);
+    this.submitMentor = this.submitMentor.bind(this);
   }
 
-  handleChange(event) {
+  addMentee(event) {
     this.setState({value: event.target.value});
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+  submitMentee(event) {
+    alert('A mentee was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  addMentor(event) {
+    this.setState({value: event.target.value});
+  }
+
+  submitMentor(event) {
+    alert('A mentor was submitted: ' + this.state.value);
     event.preventDefault();
   }
 
@@ -33,10 +44,9 @@ class App extends React.Component {
       <div>
       <Header/>
       <Switch>
-      <Route exact path='/' render={()=><Splash allKegs={this.state.allKegs}/>}/>
-      <Route path='/NewKegForm' render={()=><NewKegForm createKeg={this.handleAddNewKeg} kegList={this.state.allKegs}/>}/>
-
-
+      <Route exact path='/' render={()=><Splash startForm={this.begin}/>}/>
+      <Route path='/MenteeForm' render={()=><MenteeForm createMentor={this.addMentor}/>}/>
+      <Route path='/MentorForm' render={()=><MentorForm createMentee={this.addMentee}/>}/>
       <Route component={Error404} />
       </Switch>
       </div>
