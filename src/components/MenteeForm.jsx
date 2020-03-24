@@ -5,8 +5,10 @@ function MenteeForm(props){
   let _name = null
   let _gender = null
   let _genderPref = null
-  let _yearsInTech = 0
-  let _specialty = 0
+  let _yearsInTech = null
+  let _specialty = null
+  let _priorities = null
+  let _goals = null
 
   function mentee(event){
     event.preventDefault();
@@ -16,6 +18,8 @@ function MenteeForm(props){
       genderPref: _genderPref.value,
       yearsInTech: _yearsInTech.value,
       specialty: _specialty.value,
+      priorities: _priorities.value,
+      goals: _goals.value,
     });
 
     _name.value = '';
@@ -23,6 +27,8 @@ function MenteeForm(props){
     _genderPref.value = '';
     _yearsInTech.value = '';
     _specialty.value = '';
+    _priorities.value = '';
+    _goals.value = '';
   }
   let post = {
 
@@ -85,6 +91,16 @@ function MenteeForm(props){
     id='specialty'
     placeholder='Specialty'
     ref={(input) => {_specialty = input}}/>
+    <input
+    type='text'
+    id='priorities'
+    placeholder='Priorities'
+    ref={(input) => {_priorities = input}}/>
+    <input
+    type='text'
+    id='goals'
+    placeholder='Goals'
+    ref={(input) => {_goals = input}}/>
     <div className='button'>
     <input type="submit" value="Add" />
     </div>
