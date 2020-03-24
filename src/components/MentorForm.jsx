@@ -1,4 +1,4 @@
-class NameForm extends React.Component {
+class MentorForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {value: ''};
