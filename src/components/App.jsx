@@ -33,7 +33,7 @@ class App extends React.Component {
       <div>
       <Header/>
       <Switch>
-      <Route exact path='/' render={()=><KegList allKegs={this.state.allKegs}/>}/>
+      <Route exact path='/' render={()=><Splash allKegs={this.state.allKegs}/>}/>
       <Route path='/NewKegForm' render={()=><NewKegForm createKeg={this.handleAddNewKeg} kegList={this.state.allKegs}/>}/>
 
 
