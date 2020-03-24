@@ -3,6 +3,8 @@ import { Router } from 'react-router-dom';
 
 function MenteeForm(props){
   let _name = null
+  let _position = null
+  let _company = null
   let _gender = null
   let _genderPref = null
   let _yearsInTech = null
@@ -14,6 +16,8 @@ function MenteeForm(props){
     event.preventDefault();
     props.createMentee({
       name: _name.value,
+      position: _position.value,
+      company: _company.value,
       gender: _gender.value,
       genderPref: _genderPref.value,
       yearsInTech: _yearsInTech.value,
@@ -23,6 +27,8 @@ function MenteeForm(props){
     });
 
     _name.value = '';
+    _position.value = '';
+    _company.value = '';
     _gender.value = '';
     _genderPref.value = '';
     _yearsInTech.value = '';
@@ -71,6 +77,16 @@ function MenteeForm(props){
     id='name'
     placeholder='First and Last Name'
     ref={(input) => {_name = input}}/>
+    <input
+    type='text'
+    id='position'
+    placeholder='Position Title'
+    ref={(input) => {_position = input}}/>
+    <input
+    type='text'
+    id='company'
+    placeholder='Company or School Name'
+    ref={(input) => {_company = input}}/>
     <input
     type='text'
     id='gender'
