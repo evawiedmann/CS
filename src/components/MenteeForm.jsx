@@ -3,24 +3,26 @@ import { Router } from 'react-router-dom';
 
 function MenteeForm(props){
   let _name = null
-  let _brand = null
-  let _price = 0
-  let _abv = 0
+  let _gender = null
+  let _genderPref = null
+  let _yearsInTech = 0
+  let _specialty = 0
 
-  function postKeg(event){
+  function mentee(event){
     event.preventDefault();
-    props.createKeg({
+    props.createMentee({
       name: _name.value,
-      brand: _brand.value,
-      price: _price.value,
-      abv: _abv.value,
-      remainingPints: [124]
+      gender: _gender.value,
+      genderPref: _genderPref.value,
+      yearsInTech: _yearsInTech.value,
+      specialty: _specialty.value,
     });
 
     _name.value = '';
-    _brand.value = '';
-    _price.value = '';
-    _abv.value = '';
+    _gender.value = '';
+    _genderPref.value = '';
+    _yearsInTech.value = '';
+    _specialty.value = '';
   }
   let post = {
 
@@ -55,29 +57,34 @@ function MenteeForm(props){
   }
 
   return (
-    <div onSubmit={postKeg}>
+    <div onSubmit={mentee}>
     <div className='form'>
     <form>
     <input
     type='text'
     id='name'
-    placeholder='Beer Name'
+    placeholder='First and Last Name'
     ref={(input) => {_name = input}}/>
     <input
     type='text'
-    id='brand'
-    placeholder='Brewery Name'
-    ref={(input) => {_brand = input}}/>
+    id='gender'
+    placeholder='Gender'
+    ref={(input) => {_gender = input}}/>
     <input
     type='text'
-    id='price'
-    placeholder='Price Per Keg'
-    ref={(input) => {_price = input}}/>
+    id='genderPref'
+    placeholder='Mentor Gender Preference'
+    ref={(input) => {_genderPref = input}}/>
     <input
     type='text'
-    id='abv'
-    placeholder='ABV'
-    ref={(input) => {_abv = input}}/>
+    id='yearsInTech'
+    placeholder='Years in Tech'
+    ref={(input) => {_yearsInTech = input}}/>
+    <input
+    type='text'
+    id='specialty'
+    placeholder='Specialty'
+    ref={(input) => {_specialty = input}}/>
     <div className='button'>
     <input type="submit" value="Add" />
     </div>

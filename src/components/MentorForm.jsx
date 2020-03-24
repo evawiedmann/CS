@@ -7,9 +7,9 @@ function MentorForm(props){
   let _price = 0
   let _abv = 0
 
-  function postKeg(event){
+  function mentor(event){
     event.preventDefault();
-    props.createKeg({
+    props.createMentor({
       name: _name.value,
       brand: _brand.value,
       price: _price.value,
@@ -55,7 +55,7 @@ function MentorForm(props){
   }
 
   return (
-    <div onSubmit={postKeg}>
+    <div onSubmit={mentor}>
     <div className='form'>
     <form>
     <input
@@ -63,21 +63,6 @@ function MentorForm(props){
     id='name'
     placeholder='Beer Name'
     ref={(input) => {_name = input}}/>
-    <input
-    type='text'
-    id='brand'
-    placeholder='Brewery Name'
-    ref={(input) => {_brand = input}}/>
-    <input
-    type='text'
-    id='price'
-    placeholder='Price Per Keg'
-    ref={(input) => {_price = input}}/>
-    <input
-    type='text'
-    id='abv'
-    placeholder='ABV'
-    ref={(input) => {_abv = input}}/>
     <div className='button'>
     <input type="submit" value="Add" />
     </div>
